@@ -103,7 +103,7 @@
      <item>
       <widget class="QLineEdit" name="lineEdit_5">
        <property name="text">
-        <string>0.1</string>
+        <string>0.01</string>
        </property>
       </widget>
      </item>
@@ -222,7 +222,7 @@ Step size</string>
       <x>390</x>
       <y>0</y>
       <width>401</width>
-      <height>61</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="html">
@@ -231,16 +231,19 @@ Step size</string>
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Values for two types of diode:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1N4148(silicon): Is = 2.52nA, nvt = 0.0438&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1N5817(shottky): Is = 31.7uA, nvt = 0.0343&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Common values: Rt = 1, A = 3, f = 1000, C1,C2 = 2e-9, R = 1e9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tip: keep saturation current and capacitance in same order of magnitude. Shottky diodes typically have higher saturation currents than silicon, so increase capacitance accordingly&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>269</x>
-      <y>69</y>
+      <x>260</x>
+      <y>160</y>
       <width>531</width>
       <height>301</height>
      </rect>
@@ -282,8 +285,8 @@ hr { height: 1px; border-width: 0; }
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>380</y>
+      <x>270</x>
+      <y>100</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -295,8 +298,8 @@ hr { height: 1px; border-width: 0; }
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>380</y>
+      <x>260</x>
+      <y>60</y>
       <width>61</width>
       <height>31</height>
      </rect>

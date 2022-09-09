@@ -35,8 +35,9 @@ double h = 1e-3;
 
 double dv1(double v1, double v2, double t)
 {
+    double w=6.28*f;
     double vd = v1-v2;
-    double res = A*f*cos(f*t) - is/C1*((exp(vd/nvt)-1)-(exp(-v1/nvt)-1));
+    double res = w*A*cos(w*t) - is/C1*(exp(vd/nvt)-exp(-v1/nvt));
     return res;
 }
 
@@ -49,20 +50,7 @@ double dv2(double v1, double v2)
 
 double rk4(double v1, double v2, double rt)
 {
-    /*double c10 = 1.0/4, c11 = 1.0/4;
-        double c20 = 3.0/8, c21 = 3.0/32, c22 = 9.0/32;
-        double c30 = 12.0/13, c31 = 1932.0/2197, c32 = -7200.0/2197, c33 = 7296.0/2197;
-        double c40 = 1.0, c41 = 439.0/216, c42 = -8.0, c43 = 3680.0/513, c44 = -845.0/4104;
-        double c50 = 1.0/2, c51 = -8.0/27, c52 = 2.0, c53 = -3544.0/2565, c54 = 1859.0/4104, c55 = -11.0/40;
-        double z00 = 16.0/135, z01 = 0, z02 = 6656.0/12825, z03 = 28561.0/56430, z04 = -9.0/50, z05 = 2.0/55;
-        double z10 = 25.0/216, z11 = 0, z12 = 1408.0/2565, z13 = 2197.0/4101, z14 = -1.0/5, z15 = 0;
-        double v1rk4,v2rk4;*/
 
-
-        /*double s0;
-        double s1;
-        double diff0,diff1;
-        double db[2];*/
         double k0,k1,k2,k3,l0,l1,l2,l3;
         while(t<=rt)
         {
@@ -78,12 +66,13 @@ double rk4(double v1, double v2, double rt)
            k3 = dv1(v1+h*k2,v2+h*l2,t+h);
            l3 = dv2(v1+h*k2,v2+h*l2);
 
+           series_v1 -> append(t,v1);
+           series_v2 -> append(t,v2);
 
            v1 = v1+h*(k0+2*k1+2*k2+k3)/6;
            v2 = v2+h*(l0+2*l1+2*l2+l3)/6;
 
-           series_v1 -> append(t,v1);
-           series_v2 -> append(t,v2);
+
 
 
            t +=h;
@@ -127,6 +116,20 @@ void solver::DrawChart()
 
 }
 
+//void solver::clearLayout(QVBoxLayout* ChartL, bool deleteWidgets = true)
+//{
+//    while (QLayoutItem* item = ChartL->takeAt(0))
+//    {
+//        if (deleteWidgets)
+//        {
+//            if (QWidget* widget = item->widget())
+//                widget->deleteLater();
+//        }
+//        if (QLayout* childLayout = item->layout())
+//            clearLayout(childLayout, deleteWidgets);
+//        delete item;
+//    }
+//}
 
 void solver::on_pushButton_2_clicked()
 {
